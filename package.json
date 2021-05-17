@@ -1,0 +1,16 @@
+{
+  "name": "Auctions",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ AndonMitev/Auctions --access-token 7fcd0d0e0b784e859fbf1abd3cb3bc41",
+    "create-local": "graph create --node http://localhost:8020/ AndonMitev/Auctions",
+    "remove-local": "graph remove --node http://localhost:8020/ AndonMitev/Auctions",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 AndonMitev/Auctions"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.20.0",
+    "@graphprotocol/graph-ts": "0.20.0"
+  }
+}

@@ -1,0 +1,56 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Contract
+    network: rinkeby
+    source:
+      address: "0x6a5ED25b42c8241fb870c1Dd5D20b7DDA569D120"
+      abi: Contract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - LogAuctionCanceled
+        - LogAuctionCreated
+        - LogAuctionExtended
+        - LogAuctionRevenueWithdrawal
+        - LogBidMatched
+        - LogBidSubmitted
+        - LogBidWithdrawal
+        - LogERC721Deposit
+        - LogERC721RewardsClaim
+        - LogERC721Withdrawal
+        - LogRoyaltiesWithdrawal
+        - OwnershipTransferred
+      abis:
+        - name: Contract
+          file: Contract/abis/Contract.json
+      eventHandlers:
+        - event: LogAuctionCanceled(uint256,uint256)
+          handler: handleLogAuctionCanceled
+        - event: LogAuctionCreated(uint256,address,uint256,uint256,uint256,uint256,bool,uint256)
+          handler: handleLogAuctionCreated
+        - event: LogAuctionExtended(uint256,uint256,uint256)
+          handler: handleLogAuctionExtended
+        - event: LogAuctionRevenueWithdrawal(address,uint256,uint256,uint256)
+          handler: handleLogAuctionRevenueWithdrawal
+        - event: LogBidMatched(uint256,uint256,uint256,uint256,address,uint256)
+          handler: handleLogBidMatched
+        - event: LogBidSubmitted(address,uint256,uint256,uint256,uint256)
+          handler: handleLogBidSubmitted
+        - event: LogBidWithdrawal(address,uint256,uint256,uint256)
+          handler: handleLogBidWithdrawal
+        - event: LogERC721Deposit(address,address,uint256,uint256,uint256,uint256,uint256)
+          handler: handleLogERC721Deposit
+        - event: LogERC721RewardsClaim(address,uint256,uint256,uint256)
+          handler: handleLogERC721RewardsClaim
+        - event: LogERC721Withdrawal(address,address,uint256,uint256,uint256,uint256,uint256)
+          handler: handleLogERC721Withdrawal
+        - event: LogRoyaltiesWithdrawal(uint256,address,address,uint256)
+          handler: handleLogRoyaltiesWithdrawal
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: Contract/Contract.wasm

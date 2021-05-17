@@ -1,0 +1,20 @@
+type AuctionEntity @entity {
+  id: ID!
+  auctionId: BigInt!
+  auctionOwner: Bytes!
+  numberOfSlots: BigInt!
+  startBlockNumber: BigInt!
+  endBlockNumber: BigInt!
+  resetTimer: BigInt!
+  supportsWhitelist: Boolean!
+  time: BigInt!
+}
+
+type LogBidSubmittedEntity @entity {
+  id: ID!
+  sender: Bytes!
+  auctionId: BigInt!
+  currentBid: BigInt!
+  totalBid: BigInt!
+  time: BigInt!
+}
