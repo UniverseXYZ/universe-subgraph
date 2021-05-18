@@ -24,11 +24,11 @@ Then to init the project execute following:
 
 2. There are three main parts in the newly created project:
 
-- subgraph.yaml - Config file where we provide data for our smartcontract so we can set the subgraph to listen only for events from our smartcontract - More info: https://thegraph.com/docs/define-a-subgraph#the-subgraph-manifest
+- subgraph.yaml - Config file where we provide data for our smartcontract so we can set the subgraph to listen only for events from our smartcontract - More info: [Manifiest](https://thegraph.com/docs/define-a-subgraph#the-subgraph-manifest)
 
-- schema.graphql - Contains all the models/entites, usually models have same struct and types as the events from our smart contract - https://thegraph.com/docs/define-a-subgraph#the-graphql-schema
+- schema.graphql - Contains all the models/entites, usually models have same struct and types as the events from our smart contract - [Create entity](https://thegraph.com/docs/define-a-subgraph#the-graphql-schema)
 
-- src/mapping.ts - File where we use to fill our models with data from the emitted events - https://thegraph.com/docs/define-a-subgraph#writing-mappings
+- src/mapping.ts - File where we use to fill our models with data from the emitted events - [Map entity and save it](https://thegraph.com/docs/define-a-subgraph#writing-mappings)
 
 3. Simple workflow after project is initialized
 
